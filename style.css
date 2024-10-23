@@ -15,7 +15,7 @@ body {
 /* Navigation Bar */
 .nav-bar {
     background-color: #1a1a1a;
-    padding: 10px 0; /* Reduced padding for a smaller upper panel */
+    padding: 20px 0; /* Default for PC */
     position: sticky;
     top: 0;
     z-index: 10;
@@ -36,20 +36,20 @@ body {
     object-fit: contain;
 }
 
+/* Navigation Links */
 .nav-links {
     display: flex;
-    gap: 5px; /* Smaller gap for buttons */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 40px; /* Larger gap for PC */
 }
 
 .nav-link, .hero-button {
     color: #ffffff;
     font-weight: bold;
     text-decoration: none;
-    padding: 8px 10px; /* Reduced padding for buttons */
+    padding: 15px 25px; /* Larger buttons for PC */
     border-radius: 5px;
     transition: background-color 0.3s ease;
-    font-size: 0.9rem; /* Smaller font size for buttons */
+    font-size: 1.1rem; /* Larger text for PC */
 }
 
 .hero-button {
@@ -58,6 +58,23 @@ body {
 
 .nav-link:hover, .hero-button:hover {
     background: #333333;
+}
+
+/* Mobile Adjustments for Navigation */
+@media (max-width: 768px) {
+    .nav-bar {
+        padding: 10px 0; /* Smaller padding for mobile */
+    }
+    .nav-links {
+        gap: 10px; /* Smaller gap for mobile */
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+    .nav-link, .hero-button {
+        font-size: 0.8rem; /* Smaller buttons for mobile */
+        padding: 8px 10px; /* Reduced padding for mobile buttons */
+    }
 }
 
 /* Animations */
@@ -195,7 +212,7 @@ body {
 
 /* About Us and Contact Section */
 .about-section, .contact-section {
-    padding: 100px 0; /* Increased top and bottom padding for space */
+    padding: 100px 0; /* Increased padding for space */
     background-color: #0c0c0c;
     text-align: center;
 }
@@ -213,12 +230,6 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .nav-links {
-        justify-content: space-around; /* Space around for buttons on mobile */
-        gap: 5px; /* Smaller gap for buttons */
-        flex-wrap: nowrap; /* Prevent wrapping on mobile */
-        overflow-x: auto; /* Allow horizontal scrolling if necessary */
-    }
     .video-container {
         padding: 20px 0;
     }
@@ -245,10 +256,4 @@ body {
     .contact-section p {
         margin-bottom: 20px; /* Reduce space between paragraphs */
     }
-}
-
-/* About Us and Contact Section */
-.about-section {
-    margin-bottom: 70px;
-    margin-top: 40px;
 }
