@@ -3,13 +3,14 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    box-sizing: border-box;
 }
 
 .container {
-    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 /* Navigation Bar */
@@ -19,16 +20,18 @@ body, html {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
+    top: 0;
     z-index: 1000;
 }
 
 .logo {
-    height: 50px;
+    height: 40px;
 }
 
+/* Desktop and mobile navigation */
 .nav-links {
     display: flex;
     gap: 20px;
@@ -53,6 +56,10 @@ body, html {
     text-align: center;
     color: white;
     padding: 0 20px;
+}
+
+.hero-section.blur {
+    filter: blur(8px);
 }
 
 .hero-content h1 {
@@ -82,10 +89,40 @@ body, html {
     color: #000;
 }
 
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 24px;
+    cursor: pointer;
+}
+
+.hamburger-menu div {
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+}
+
 /* Mobile-specific styles */
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* Hide the regular navigation on mobile */
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.95);
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger-menu {
+        display: flex;
     }
 
     .hero-button {
@@ -93,46 +130,15 @@ body, html {
         text-align: center;
     }
 
+    .about-link {
+        white-space: normal;
+    }
+
+    .nav-link.hero-button {
+        white-space: normal;
+    }
+
     .nav-bar {
         justify-content: space-between;
     }
-
-    .hamburger-menu {
-        display: block;
-        cursor: pointer;
-        padding: 10px;
-    }
-
-    .hamburger-menu div {
-        width: 30px;
-        height: 3px;
-        background-color: #000;
-        margin: 5px 0;
-        transition: 0.4s;
-    }
-
-    /* Show navigation links in a vertical list on mobile */
-    .nav-links-mobile {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background-color: rgba(255, 255, 255, 0.9);
-        text-align: center;
-        z-index: 999;
-    }
-
-    /* Show navigation when hamburger menu is active */
-    .nav-active .nav-links-mobile {
-        display: flex;
-    }
-
-    /* Blur background when menu is open */
-    .nav-active .blur-background {
-        filter: blur(8px);
-        transition: filter 0.3s;
-    }
 }
-
