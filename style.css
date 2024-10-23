@@ -227,6 +227,10 @@ body {
     color: #cfcfcf;
     margin-bottom: 40px; /* Adjusted margin to reduce space between paragraphs */
 }
+  }
+    .about-section p {
+        margin-bottom: 175px; /* Reduce space between paragraphs */
+    }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
