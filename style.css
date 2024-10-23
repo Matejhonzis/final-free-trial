@@ -1,53 +1,138 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation Bar */
+.nav-bar {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background-image: url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #ff5722;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+/* Footer Section */
+.footer {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+}
+
+.social-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #000;
+}
+
 /* Mobile-specific styles */
 @media (max-width: 768px) {
-  /* Make About Us and HeroHero buttons stack in two lines */
-  .nav-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .nav-buttons a {
-    margin-bottom: 10px;
-  }
+    .nav-links {
+        display: none; /* Hide the regular navigation on mobile */
+    }
 
-  /* Hamburger menu */
-  .hamburger-menu {
-    display: block;
-    cursor: pointer;
-    position: relative;
-    z-index: 1001; /* Make sure it's above the blurred background */
-  }
+    .hero-button {
+        display: block;
+        text-align: center;
+    }
 
-  .hamburger-menu div {
-    width: 25px;
-    height: 3px;
-    background-color: #000;
-    margin: 5px 0;
-    transition: 0.4s;
-  }
+    .nav-bar {
+        justify-content: space-between;
+    }
 
-  /* Hide navigation buttons by default */
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.9);
-    z-index: 1000;
-  }
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+    }
 
-  /* Show nav-links when hamburger is clicked */
-  .nav-active .nav-links {
-    display: flex;
-  }
+    .hamburger-menu div {
+        width: 30px;
+        height: 3px;
+        background-color: #000;
+        margin: 5px 0;
+        transition: 0.4s;
+    }
 
-  /* Blur background when menu is open */
-  .nav-active .blur-background {
-    filter: blur(8px);
-    transition: filter 0.3s;
-  }
+    /* Show navigation links in a vertical list on mobile */
+    .nav-links-mobile {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        z-index: 999;
+    }
+
+    /* Show navigation when hamburger menu is active */
+    .nav-active .nav-links-mobile {
+        display: flex;
+    }
+
+    /* Blur background when menu is open */
+    .nav-active .blur-background {
+        filter: blur(8px);
+        transition: filter 0.3s;
+    }
 }
+
