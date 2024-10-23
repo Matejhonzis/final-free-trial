@@ -5,6 +5,145 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AIHustle - Home</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation Bar */
+        .nav-bar {
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #000;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            height: 100vh;
+            background-image: url('hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            background-color: #ff5722;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        /* Footer Section */
+        .footer {
+            background-color: #f1f1f1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #000;
+        }
+
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Hide the regular navigation on mobile */
+            }
+
+            .hero-button {
+                display: block;
+                text-align: center;
+            }
+
+            .nav-bar {
+                justify-content: space-between;
+            }
+
+            .hamburger-menu {
+                display: block;
+                cursor: pointer;
+                padding: 10px;
+            }
+
+            .hamburger-menu div {
+                width: 30px;
+                height: 3px;
+                background-color: #000;
+                margin: 5px 0;
+                transition: 0.4s;
+            }
+
+            /* Show navigation links in a vertical list on mobile */
+            .nav-links-mobile {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: rgba(255, 255, 255, 0.9);
+                text-align: center;
+                z-index: 999;
+            }
+
+            /* Show navigation when hamburger menu is active */
+            .nav-active .nav-links-mobile {
+                display: flex;
+            }
+
+            /* Blur background when menu is open */
+            .nav-active .blur-background {
+                filter: blur(8px);
+                transition: filter 0.3s;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -12,7 +151,25 @@
     <header class="nav-bar">
         <div class="container">
             <img src="logo.png" alt="AIHustle Logo" class="logo">
+            
+            <!-- Hamburger Menu for Mobile -->
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            
+            <!-- Navigation Links for Desktop -->
             <nav class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="free.html" class="nav-link hero-button">Free Trial</a>
+                <a href="https://herohero.co/aihustle" target="_blank" class="nav-link hero-button">HeroHero</a>
+            </nav>
+
+            <!-- Mobile Navigation Links -->
+            <nav class="nav-links-mobile">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About Us</a>
                 <a href="contact.html" class="nav-link">Contact</a>
@@ -23,7 +180,7 @@
     </header>
 
     <!-- Home Section: Hero -->
-    <section id="home" class="hero-section">
+    <section id="home" class="hero-section blur-background">
         <div class="hero-content">
             <h1>Unlock Your Potential with AIHustle</h1>
             <p>This is our Free Trial. For Full Version Click the HeroHero Button in the Right Corner.</p>
@@ -42,6 +199,13 @@
             </div>
         </div>
     </footer>
+
+    <!-- Script to Toggle Menu -->
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-bar').classList.toggle('nav-active');
+        }
+    </script>
 
 </body>
 </html>
