@@ -1,10 +1,12 @@
+
 /* General Styles */
 body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #121212; /* Dark background */
+    background-color: #121212;
     color: #ffffff;
+    overflow-x: hidden;
 }
 
 .container {
@@ -42,7 +44,6 @@ body, html {
     text-decoration: none;
     color: #ffffff;
     font-size: 16px;
-    font-weight: 500;
 }
 
 /* Hero Section */
@@ -57,10 +58,6 @@ body, html {
     text-align: center;
     color: white;
     padding: 0 20px;
-}
-
-.hero-section.blur {
-    filter: blur(8px);
 }
 
 .hero-content h1 {
@@ -99,7 +96,7 @@ body, html {
     cursor: pointer;
 }
 
-.hamburger-menu div {
+.hamburger-menu span {
     width: 30px;
     height: 3px;
     background-color: #ffffff;
@@ -116,6 +113,7 @@ body, html {
         right: 0;
         background-color: rgba(51, 51, 51, 0.95);
         text-align: center;
+        padding: 10px 0;
     }
 
     .nav-links.active {
@@ -126,20 +124,17 @@ body, html {
         display: flex;
     }
 
-    .hero-button {
-        display: block;
-        text-align: center;
+    .nav-bar {
+        justify-content: space-between;
     }
 
     .about-link {
         white-space: normal;
     }
+}
 
-    .nav-link.hero-button {
-        white-space: normal;
-    }
-
-    .nav-bar {
-        justify-content: space-between;
-    }
+/* Blur Background for Active Menu */
+.blur-background .hero-section,
+.blur-background .footer {
+    filter: blur(8px);
 }
