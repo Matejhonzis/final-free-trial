@@ -15,18 +15,18 @@
             
             <!-- Hamburger Menu for Mobile -->
             <div class="hamburger-menu" onclick="toggleMenu()">
-                <div></div>
-                <div></div>
-                <div></div>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
             
             <!-- Navigation Links for Desktop and Mobile -->
             <nav class="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link about-link">About Us</a>
+                <a href="about.html" class="nav-link">About Us</a>
                 <a href="contact.html" class="nav-link">Contact</a>
-                <a href="free.html" class="nav-link hero-button">Free Trial</a>
-                <a href="https://herohero.co/aihustle" target="_blank" class="nav-link hero-button">HeroHero</a>
+                <a href="free.html" class="nav-link">Free Trial</a>
+                <a href="https://herohero.co/aihustle" target="_blank" class="nav-link">HeroHero</a>
             </nav>
         </div>
     </header>
@@ -56,7 +56,7 @@
     <script>
         function toggleMenu() {
             document.querySelector('.nav-links').classList.toggle('active');
-            document.querySelector('.hero-section').classList.toggle('blur');
+            document.body.classList.toggle('blur-background');
         }
     </script>
 
