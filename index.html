@@ -12,30 +12,29 @@
     <header class="nav-bar">
         <div class="container">
             <img src="logo.png" alt="AIHustle Logo" class="logo">
-            
-            <!-- Hamburger Menu for Mobile -->
-            <div class="hamburger-menu" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            
-            <!-- Navigation Links for Desktop and Mobile -->
             <nav class="nav-links">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About Us</a>
                 <a href="contact.html" class="nav-link">Contact</a>
-                <a href="free.html" class="nav-link special-link">Free Trial</a>
-                <a href="https://herohero.co/aihustle" target="_blank" class="nav-link special-link">HeroHero</a>
+                <a href="free.html" class="nav-link hero-button">Free Trial</a>
+                <a href="https://herohero.co/aihustle" target="_blank" class="nav-link hero-button">HeroHero</a>
             </nav>
+            <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        </div>
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About Us</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="free.html" class="nav-link">Free Trial</a>
+            <a href="https://herohero.co/aihustle" target="_blank" class="nav-link">HeroHero</a>
         </div>
     </header>
 
-    <!-- Home Section: Hero -->
+    <!-- Hero Section -->
     <section id="home" class="hero-section">
         <div class="hero-content">
             <h1>Unlock Your Potential with AIHustle</h1>
-            <p>This is our Free Trial. For Full Version Click the HeroHero Button in the Right Corner.</p>
+            <p>Join our free trial course and learn how to build successful online courses from scratch.</p>
             <a href="free.html" class="cta-button">Start Your Free Trial</a>
         </div>
     </section>
@@ -45,18 +44,17 @@
         <div class="container">
             <p>© 2024 AIHustle. All Rights Reserved.</p>
             <div class="social-links">
-                <a href="https://www.instagram.com/aihustle_net/profilecard/?igsh=MTZkMHJhd3E1Njhibw==" target="_blank">Instagram</a>
-                <a href="https://x.com/aihustle14071" target="_blank">X</a>
-                <a href="https://www.linkedin.com/in/ai-hustle-640b06333?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
             </div>
         </div>
     </footer>
 
-    <!-- Script to Toggle Menu -->
+    <!-- JavaScript for mobile menu toggle -->
     <script>
         function toggleMenu() {
-            document.querySelector('.nav-links').classList.toggle('active');
-            document.body.classList.toggle('blur-background');
+            document.getElementById('mobile-menu').classList.toggle('show');
         }
     </script>
 
